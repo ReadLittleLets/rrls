@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Stories for Kids</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.5s ease;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff6b6b;
+            text-align: center;
+            font-size: 2.5em;
+        }
+        .story-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+        .story-button {
+            background-color: #4ecdc4;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2em;
+            padding: 15px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .story-button:hover {
+            background-color: #45b7aa;
+            transform: scale(1.05);
+        }
+        .story-content {
+            background-color: white;
+            border-radius: 10px;
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .back-button, .next-button, .quiz-button {
+            background-color: #ff6b6b;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+        }
+        .back-button:hover, .next-button:hover, .quiz-button:hover {
+            background-color: #ff5252;
+        }
+        .story-page {
+            display: none;
+        }
+        .story-page.active {
+            display: block;
+        }
+        .quiz-container {
+            display: none;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .quiz-question {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .quiz-options {
+            display: grid;
+            gap: 10px;
+        }
+        .quiz-option {
+            background-color: #4ecdc4;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 10px;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        .quiz-option:hover {
+            background-color: #45b7aa;
+        }
+        .quiz-result {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .back-top-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #133ae9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.back-top-button:hover {
+    background-color: #05d9ff;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-top-button" onclick="document.location='ask.html'">Back</button>
+        <h1>Fun Stories for Kids</h1>
+        <ul class="story-list">
+            <li><button class="story-button" onclick="showStory('story1')">The Little Red Hen</button></li>
+            <li><button class="story-button" onclick="showStory('story2')">The Brave Little Sparrow</button></li>
+            <li><button class="story-button" onclick="showStory('story3')">The Forgetful Elephant</button></li>
+            <li><button class="story-button" onclick="showStory('story4')">The Kind Fox and the Greedy Crow</button></li>
+            <li><button class="story-button" onclick="showStory('story5')">The Turtle Who Wanted to Fly</button></li>
+            <li><button class="story-button" onclick="showStory('story6')">The Magical Paintbrush</button></li>
+            <li><button class="story-button" onclick="showStory('story7')">Leo and the Magic Tree</button></li>
+            <li><button class="story-button" onclick="showStory('story8')">The Little Star's Big Dream</button></li>
+            <li><button class="story-button" onclick="showStory('story9')">The Kind Little Elephant</button></li>
+            <li><button class="story-button" onclick="showStory('story10')">The Little Duck Who Learned to Swim</button></li>
+        </ul>
+        <div id="story1" class="story-content">
+            <h2>The Little Red Hen</h2>
+            <div class="story-page active">
+                <p>Once upon a time, in a cozy farmyard nestled between rolling hills, there lived a diligent little red hen. She was known throughout the farm for her hard work and determination. One sunny morning, while scratching about the barnyard, she discovered a single grain of wheat. Excited by her find, she thought of the delicious bread she could make with it.</p>
+                <p>The little red hen approached her friends - a lazy dog, a sleepy cat, and a noisy duck. "Who will help me plant this wheat?" she asked. "Not I," barked the dog, preferring to nap in the sun. "Not I," meowed the cat, stretching lazily. "Not I," quacked the duck, splashing in the pond. Undeterred, the little red hen said, "Then I will do it myself." And so she did, carefully planting the grain of wheat in the rich soil.</p>
+                <p>As days passed, the wheat grew tall and strong. When it was time to harvest, the little red hen again asked her friends, "Who will help me cut this wheat?" Once more, she was met with refusals. So, she cut the wheat herself, her tiny wings working tirelessly under the hot sun.</p>
+                <p>Next came the task of threshing the wheat to separate the grain from the chaff. "Who will help me thresh this wheat?" the little red hen inquired. Yet again, her friends declined, each finding an excuse to avoid work. Determined as ever, she threshed the wheat alone.</p>
+                <button class="next-button" onclick="nextPage('story1')">Next Page</button>
+            </div>
+            <div class="story-page">
+                <p>When it was time to take the wheat to the mill to be ground into flour, the little red hen once more sought help. "Who will help me take this wheat to the mill?" she asked. As before, no one volunteered. So, the persistent hen made the long journey to the mill and back, carrying the heavy sack of wheat and then flour.</p>
+                <p>Finally, with a sack of fresh flour, the little red hen was ready to bake. "Who will help me bake this bread?" she asked. By now, you can guess the response. Her friends, who had not lifted a finger to help, once again refused.</p>
+                <p>Undaunted, the little red hen mixed the flour with water, kneaded the dough, and watched it rise. She shaped it carefully and placed it in the oven, filling the farmyard with the mouthwatering aroma of baking bread.</p>
+                <p>As the warm, golden loaf came out of the oven, suddenly the dog, the cat, and the duck appeared, noses twitching at the delicious smell. "Who will help me eat this bread?" asked the little red hen. "I will!" barked the dog. "I will!" meowed the cat. "I will!" quacked the duck, all eager to share in the fruits of her labor.</p>
+                <p>But the little red hen shook her head. "No," she said firmly. "I planted the wheat, I cut it, I threshed it, I took it to the mill, and I baked it all by myself. Now, my chicks and I will eat it ourselves."</p>
+                <p>And they did just that, savoring every bite of the bread that was the result of the little red hen's hard work and perseverance. As for the dog, the cat, and the duck, they learned a valuable lesson about the importance of helping others and the rewards of hard work. From that day on, they were much more willing to lend a hand when asked, and the little red hen found that with everyone's help, life on the farm became much more enjoyable for all.</p>
+                <button class="back-button" onclick="hideStory('story1')">Back to Stories</button>
+                <button class="quiz-button" onclick="startQuiz('story1')">Take Quiz</button>
+            </div>
+        </div>
+        <div id="story2" class="story-content">
+            <h2>The Brave Little Sparrow</h2>
+            <div class="story-page active">
+                <p style="font-size: 20px;">Deep in a lush, green forest lived Pip, the smallest sparrow of the flock. Though tiny, Pip was known for his boundless curiosity and fearless heart. One sunny morning, he overheard the elder birds gossiping about a golden berry hidden in the heart of the forest. Legends claimed it brought good fortune to whoever found it.  
+                <p style="font-size: 20px;">The other birds scoffed when Pip announced his plan to find the berry. “You? You’re too small,” sneered an eagle. “This task is for someone like me, not a tiny sparrow!” But Pip refused to let their laughter deter him. </p> 
+                <p style="font-size: 20px;">The journey was long and filled with challenges. Pip flew tirelessly, asking the forest creatures for clues. A friendly squirrel directed him to the tallest tree, and a deer pointed him toward a glimmering stream. After days of searching, Pip finally discovered the thorny bush where the golden berry lay hidden.</p>
+                <button class="next-button" onclick="nextPage('story2')">Next Page</button>
+                
+            </div>
+            <div class="story-page">
+                
+                <p style="font-size: 20px;">The thorns looked sharp enough to tear even the strongest wings. But Pip’s sharp mind came to his rescue. Spotting a sturdy stick nearby, he carefully pushed the berry out of the bush without touching the thorns.  </p>
+                <p style="font-size: 20px;">When Pip returned, the other birds were astonished. The eagle, humbled, said, “I underestimated you, Pip. Bravery and cleverness matter far more than size.” From that day on, Pip became a symbol of courage in the forest.  </p>
+                <button class="back-button" onclick="hideStory('story2')">Back to Stories</button>
+                <button class="quiz-button" onclick="startQuiz('story2')">Take Quiz</button>
+            </div>
+        </div>
+        <div id="story3" class="story-content">
+            <h2>The Forgetful Elephant</h2>
+            <div class="story-page active">
+                <p style="font-size: 20px;">Elly the young elephant lived in a vibrant savannah filled with tall grass and bright flowers. She was playful and kind, but she had one flaw: she was incredibly forgetful. She often misplaced her favorite stick or forgot where she left her bananas.</p>
+                <p style="font-size: 20px;">One day, Elly’s mother asked her to fetch water from the river. “This is important, Elly,” her mother said. “The herd is thirsty.” Elly promised to return quickly and set off with a spring in her step.  </p> 
+                <p style="font-size: 20px;">On her way, Elly became distracted by a group of butterflies fluttering in the air. Their colorful wings mesmerized her, and she chased them around the savannah, forgetting all about the water. She eventually returned home empty-handed.</p>
+                <button class="next-button" onclick="nextPage('story3')">Next Page</button>
+                
+            </div>
+            <div class="story-page">
+                
+                <p style="font-size: 20px;">The thorns looked sharp enough to tear even the strongest wings. But Pip’s sharp mind came to his rescue. Spotting a sturdy stick nearby, he carefully pushed the berry out of the bush without touching the thorns.  </p>
+                <p>Her family cheered as she delivered the water. From that day on, Elly used little tricks to help her remember important tasks, and she became a reliable member of the herd.  </p>
+                <button class="back-button" onclick="hideStory('story3')">Back to Stories</button>
+                <button class="quiz-button" onclick="startQuiz('story3')">Take Quiz</button>
+            </div>
+        </div>
+
+
+
+
+
+        <div id="story4" class="story-content">
+            <h2>Leo and the Magic Tree</h2>
+            <div class="story-page active">
+                <p>In a sunny meadow, two unlikely neighbors lived side by side: Fenny the fox and Cora the crow. Fenny was a cheerful and generous fox who loved sharing with others. Cora, on the other hand, was greedy. She hoarded shiny objects and food, never offering to share. </p>
+                <p>One day, Fenny stumbled upon a basket of fresh berries while exploring the forest. Excited, she thought, “This is too much for just me. I’ll share with Cora.” She invited Cora to join her under the shade of an old oak tree.<p> 
+                <p>Cora swooped down and immediately began eating the juiciest berries. She didn’t thank Fenny or leave enough for her. “Fenny is too kind for her own good,” she thought smugly.  </p>
+                <button class="next-button" onclick="nextPage('story4')">Next Page</button>
+                
+            </div>
+            <div class="story-page">
+                
+                <p>The next day, Cora found a loaf of bread. “Finally, something all for me!” she cackled, hiding it in her tree. But by the time she tried to eat it, the bread had grown stale and hard. </p>
+                <p>Cora struggled to chew and grew frustrated. Seeing her plight, Fenny offered some water to soften the bread. “Here, this will help,” she said kindly.</p>
+                <p>Cora felt ashamed. “I was selfish, but you still helped me,” she admitted. From then on, Cora learned to share and found that generosity made her feel far happier.</p>
+                <button class="back-button" onclick="hideStory('story4')">Back to Stories</button>
+                <button class="quiz-button" onclick="startQuiz('story4')">Take Quiz</button>
+            </div>
+        </div>
+
+
+
+
+
+        <div id="story5" class="story-content">
+            <h2>The Turtle Who Wanted to Fly</h2>
+            <div class="story-page active">
+                <p>Timmy the turtle lived in a quiet pond surrounded by tall reeds. While his turtle friends were content to crawl on land and swim in the water, Timmy longed for the sky. Every day, he watched the birds soaring high above and wished he could fly.  </p>
+                <p>His friends teased him. “You’re a turtle, Timmy. Turtles don’t fly.” But Timmy refused to give up on his dream. <p> 
+                <p>One evening, Timmy approached a wise old owl perched in a tree. “How can I fly?” he asked. The owl, amused by Timmy’s determination, said, “You may not fly like a bird, but you can find your own way to soar.” </p>
+                <button class="next-button" onclick="nextPage('story5')">Next Page</button>
+                
+            </div>
+            <div class="story-page">
+                
+                <p>Inspired, Timmy spent days thinking creatively. Finally, he had an idea. He gathered sticks and leaves to build a small raft. Pushing it into the river, he climbed aboard and let the current carry him downstream. As the raft sped through the water, Timmy felt the wind rushing past him. “This is what flying must feel like!” he thought. </p>
+                <p>His friends watched in amazement. “You’ve found your way to fly!” they cheered. Timmy smiled, proud that he’d followed his dream in his own unique way.</p>
+                <button class="back-button" onclick="hideStory('story5')">Back to Stories</button>
+                <button class="quiz-button" onclick="startQuiz('story5')">Take Quiz</button>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="story6" class="story-content">
+            <h2>The Magical Paintbrush</h2>
+            <div class="story-page active">
+                <p>Lila, a young girl, lived in a small, quiet village. She loved to draw and paint, but her family was too poor to afford art supplies. She used sticks to draw in the dirt, imagining vibrant colors.</p>
+                <p>One day, while wandering through the market, Lila spotted an old paintbrush in a dusty corner. The shopkeeper handed it to her with a mysterious smile. “This is no ordinary brush,” he said. “Whatever you paint with it will come to life.”  <p> 
+                <p>Excited, Lila ran home and tried the brush. She painted an apple on the table, and to her astonishment, it became real. She painted a loaf of bread for her family, and they ate it gratefully.” </p>
+                <button class="next-button" onclick="nextPage('story6')">Next Page</button>
+                
+            </div>
+            <div class="story-page">
+                
+                <p>Word spread about the magical brush. Villagers came to Lila for help. She painted rain for farmers during a drought, toys for children, and blankets for the elderly. Everyone admired her generosity. </p>
+                <p>But not everyone was kind. A greedy man demanded, “Paint me a chest of gold!” Lila refused, saying, “This brush is for helping, not for greed.” Furious, the man tried to steal the brush, but it wouldn’t work for him.  </p>
+                <p>Realizing his mistake, he apologized. Lila forgave him and continued to use her gift to spread joy and kindness throughout the village.</p>
+                <button class="back-button" onclick="hideStory('story6')">Back to Stories</button>
+                <button class="quiz-button" onclick="startQuiz('story6')">Take Quiz</button>
+            </div>
+        </div>
+
+
+
+
+        <div id="story7" class="story-content">
+            <h2>The Adventures of Leo and the Magic Tree</h2>
+            <div class="story-page active">
+                <p>Once upon a time, in a small village, there was a curious boy named Leo. Every day, he would explore the forest near his home, looking for new adventures. One afternoon, Leo found a hidden clearing with a big, old tree. To his surprise, the tree spoke!
+
+                    "Hello, Leo," the tree said. "I am the Magic Tree, and I can grant you one special wish."
+                    
+                    Leo was amazed. "A wish?" he asked.
+                    
+                    "Yes," the tree replied. "Make your wish, and I will take you on an adventure."
+                    
+                    Leo thought for a moment. He always wanted an exciting journey. "I wish for a grand adventure!" he said excitedly.
+                    
+                    The tree smiled. "Your wish is granted. Close your eyes."
+                    
+                    Leo closed his eyes, and when he opened them again, he was in a magical world. The sky was purple, the trees were golden, and strange creatures flew around. The Magic Tree's voice echoed in his mind.</p>
+                <button class="next-button" onclick="nextPage('story7')">Next Page</button>
+              
+            </div>
+            <div class="story-page">
+                
+                <p>"Welcome to the Land of Wonders. You must pass three challenges to complete your adventure."
+
+                    The first challenge came quickly. Leo saw a fast-moving river. A little frog called out, "Can you help me? I can't get across to my family!" Leo found a branch, made a small raft, and helped the frog across the river. "Thank you for being kind, Leo!" the frog said.
+                    
+                    Next, Leo reached a tall mountain. The climb was tough, but he kept going. He remembered the tree’s words about bravery. After a long struggle, Leo reached the top, where a glowing crystal filled him with energy.
+                    
+                    At the top, the crystal said, "Leo, you have shown courage and kindness. You are ready for anything."
+                    
+                    Leo smiled, then found himself back by the Magic Tree in his village. "You have completed your journey," the tree said. "You’ve learned the true meaning of kindness, courage, and perseverance."
+                    
+                    Leo returned home, knowing that the greatest adventure was inside him.</p>
+                <button class="back-button" onclick="hideStory('story7')">Back to Stories</button>
+                <button class="quiz-button" onclick="startQuiz('story7')">Take Quiz</button>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="story8" class="story-content">
+            <h2>The Little Star’s Big Dream</h2>
+            <div class="story-page active">
+                <p>In a quiet corner of the night sky, there lived a little star named Twinkle. Twinkle wasn’t the biggest or the brightest star, but she had big dreams. Every night, she would look down at the Earth and wonder what it would be like to shine the brightest.
+
+                    One evening, Twinkle decided to make her dream come true. She tried and tried to shine as brightly as the biggest stars, but no matter how hard she tried, she just couldn’t. Twinkle felt sad and almost gave up.</p>
+                <button class="next-button" onclick="nextPage('story8')">Next Page</button>
+               
+            </div>
+            <div class="story-page">
+                
+                <p>Suddenly, a kind old star named Glow spoke to her. “Twinkle,” Glow said, “you don’t need to be the biggest star to shine brightly. You just need to shine in your own way.”
+
+                    Twinkle thought about Glow’s words. The next night, she shone her best and brightest, and to her surprise, the people on Earth looked up and smiled at her light.
+                    
+                    From that night on, Twinkle learned that being herself was the best way to shine.</p>
+                <button class="back-button" onclick="hideStory('story8')">Back to Stories</button>
+                <button class="quiz-button" onclick="startQuiz('story8')">Take Quiz</button>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div id="story9" class="story-content">
+            <h2>The Kind Little Elephant</h2>
+            <div class="story-page active">
+                <p>In the jungle, there was a young elephant named Ella. Ella was gentle, kind, and always helped her friends. One hot day, the animals gathered around the watering hole to drink, but they noticed the water was almost gone. The animals started to argue about who should drink first.
+
+                    Ella watched them and felt sad. She knew that everyone needed water, but the arguing wasn’t helping. So, Ella stepped forward and said, “Let’s share the water, one by one, and make sure no one is left out.”</p>
+                <button class="next-button" onclick="nextPage('story9')">Next Page</button>
+               
+            </div>
+            <div class="story-page">
+                
+                <p>At first, the animals didn’t listen. But Ella kept talking gently to them, and soon they realized she was right. One by one, they all drank and left enough water for everyone.
+
+                    The animals were grateful to Ella for her kindness and learned that sharing and helping each other was the best way to solve problems.</p>
+                <button class="back-button" onclick="hideStory('story9')">Back to Stories</button>
+                <button class="quiz-button" onclick="startQuiz('story9')">Take Quiz</button>
+            </div>
+        </div>
+
+
+
+
+
+        <div id="story10" class="story-content">
+            <h2>The Little Duck Who Learned to Swim</h2>
+            <div class="story-page active">
+                <p>Once upon a time, in a peaceful pond, there was a little duck named Daisy. Daisy had always been afraid of swimming. She watched her friends swim gracefully, but every time she tried, she would get scared and paddle back to the shore.
+
+                    One sunny day, Daisy’s mother said, “Daisy, I believe you are ready to swim. Don’t be afraid. You just have to try.”</p>
+                <button class="next-button" onclick="nextPage('story10')">Next Page</button>
+                
+            </div>
+            <div class="story-page">
+                
+                <p>Daisy was nervous, but she wanted to be brave. She slowly waded into the water and flapped her wings. At first, she wobbled, but then something magical happened. She began to float, and the water felt calm and soft beneath her. Daisy swam around the pond, feeling proud of herself.
+
+                    From that day on, Daisy wasn’t afraid to swim. She learned that sometimes, you just need to face your fears to discover something wonderful.</p>
+                <button class="back-button" onclick="hideStory('story10')">Back to Stories</button>
+                <button class="quiz-button" onclick="startQuiz('story10')">Take Quiz</button>
+            </div>
+        </div>
+        
+        <div id="quiz-container" class="quiz-container">
+            <h2 id="quiz-title"></h2>
+            <div id="quiz-question" class="quiz-question"></div>
+            <div id="quiz-options" class="quiz-options"></div>
+            <div id="quiz-result" class="quiz-result"></div>
+            <button id="quiz-next" class="next-button" style="display: none;" onclick="nextQuestion()">Next Question</button>
+            <button id="quiz-finish" class="back-button" style="display: none;" onclick="finishQuiz()">Finish Quiz</button>
+        </div>
+    </div>
+    <script>
+        function getRandomPastelColor() {
+            const hue = Math.floor(Math.random() * 360);
+            return `hsl(${hue}, 100%, 90%)`;
+        }
+
+        function showStory(storyId) {
+            document.querySelectorAll('.story-content').forEach(function(story) {
+                story.style.display = 'none';
+            });
+            document.getElementById(storyId).style.display = 'block';
+            document.querySelector('.story-list').style.display = 'none';
+            document.body.style.backgroundColor = getRandomPastelColor();
+            
+            // Reset to first page
+            const storyPages = document.querySelectorAll(`#${storyId} .story-page`);
+            storyPages.forEach((page, index) => {
+                page.classList.toggle('active', index === 0);
+            });
+        }
+
+        function hideStory(storyId) {
+            document.getElementById(storyId).style.display = 'none';
+            document.querySelector('.story-list').style.display = 'grid';
+            document.body.style.backgroundColor = '#f0f8ff';
+        }
+
+        function nextPage(storyId) {
+            const storyPages = document.querySelectorAll(`#${storyId} .story-page`);
+            let activeIndex = Array.from(storyPages).findIndex(page => page.classList.contains('active'));
+            
+            if (activeIndex < storyPages.length - 1) {
+                storyPages[activeIndex].classList.remove('active');
+                storyPages[activeIndex + 1].classList.add('active');
+            }
+        }
+
+        const quizzes = {
+            story1: [
+                {
+                    question: "What did the Little Red Hen find?",
+                    options: ["A coin", "A grain of wheat", "A magic bean", "A golden egg"],
+                    correctAnswer: "A grain of wheat"
+                },
+                {
+                    question: "Who did the Little Red Hen ask for help?",
+                    options: ["A dog, a cat, and a duck", "A cow, a pig, and a sheep", "A horse, a goat, and a chicken", "A rabbit, a mouse, and a bird"],
+                    correctAnswer: "A dog, a cat, and a duck"
+                },
+                {
+                    question: "What did the Little Red Hen want to make?",
+                    options: ["A cake", "A pie", "Bread", "Cookies"],
+                    correctAnswer: "Bread"
+                },
+                {
+                    question: "Did the other animals help the Little Red Hen?",
+                    options: ["Yes, they all helped", "Only the dog helped", "Only the cat helped", "No, they didn't help"],
+                    correctAnswer: "No, they didn't help"
+                },
+                {
+                    question: "What did the Little Red Hen do after planting the wheat?",
+                    options: ["She went on vacation", "She waited for it to grow", "She bought more wheat", "She made bread immediately"],
+                    correctAnswer: "She waited for it to grow"
+                },
+                {
+                    question: "What did the Little Red Hen do after harvesting the wheat?",
+                    options: ["She sold it", "She fed it to the animals", "She threshed it", "She planted it again"],
+                    correctAnswer: "She threshed it"
+                },
+                {
+                    question: "Where did the Little Red Hen take the wheat after threshing?",
+                    options: ["To the market", "To the mill", "To the barn", "To the kitchen"],
+                    correctAnswer: "To the mill"
+                },
+                {
+                    question: "What did the other animals want to do when the bread was ready?",
+                    options: ["Help clean up", "Go to sleep", "Eat the bread", "Make more bread"],
+                    correctAnswer: "Eat the bread"
+                },
+                {
+                    question: "Did the Little Red Hen share the bread with the other animals?",
+                    options: ["Yes, she shared with everyone", "She only shared with the dog", "She only shared with the cat", "No, she didn't share"],
+                    correctAnswer: "No, she didn't share"
+                },
+                {
+                    question: "What lesson did the other animals learn?",
+                    options: ["Bread is delicious", "Sleeping is important", "Hard work pays off", "The Little Red Hen is mean"],
+                    correctAnswer: "Hard work pays off"
+                }
+            ],
+            // Add quizzes for other stories here
+        };
+
+        let currentQuiz = null;
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function startQuiz(storyId) {
+            currentQuiz = quizzes[storyId];
+            currentQuestionIndex = 0;
+            score = 0;
+            document.getElementById(storyId).style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('quiz-title').textContent = `Quiz: ${document.querySelector(`#${storyId} h2`).textContent}`;
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = currentQuiz[currentQuestionIndex];
+            document.getElementById('quiz-question').textContent = question.question;
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+            question.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.className = 'quiz-option';
+                button.textContent = option;
+                button.onclick = () => selectAnswer(index);
+                optionsContainer.appendChild(button);
+            });
+            document.getElementById('quiz-next').style.display = 'none';
+            document.getElementById('quiz-finish').style.display = 'none';
+            document.getElementById('quiz-result').textContent = '';
+        }
+
+        function selectAnswer(index) {
+            const question = currentQuiz[currentQuestionIndex];
+            const selectedAnswer = question.options[index];
+            const isCorrect = selectedAnswer === question.correctAnswer;
+            if (isCorrect) {
+                score++;
+            }
+            document.getElementById('quiz-result').textContent = isCorrect ? 'Correct!' : 'Incorrect. The correct answer is: ' + question.correctAnswer;
+            document.querySelectorAll('.quiz-option').forEach(button => button.disabled = true);
+            if (currentQuestionIndex < currentQuiz.length - 1) {
+                document.getElementById('quiz-next').style.display = 'block';
+            } else {
+                document.getElementById('quiz-finish').style.display = 'block';
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            showQuestion();
+        }
+
+        function finishQuiz() {
+            document.getElementById('quiz-question').textContent = 'Quiz Completed!';
+            document.getElementById('quiz-options').innerHTML = '';
+            document.getElementById('quiz-result').textContent = `Your score: ${score} out of ${currentQuiz.length}`;
+            document.getElementById('quiz-finish').textContent = 'Try Again';
+            document.getElementById('quiz-finish').onclick = () => {
+                document.querySelector('.story-list').style.display = 'grid';
+                document.getElementById('quiz-container').style.display = 'none';
+                document.body.style.backgroundColor = '#f0f8ff';
+            };
+        }
+    </script>
+</body>
+</html>
